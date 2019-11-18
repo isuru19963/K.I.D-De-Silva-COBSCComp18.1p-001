@@ -15,7 +15,11 @@
 		D9118DAE23673208007F5C63 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D9118DAC23673208007F5C63 /* LaunchScreen.storyboard */; };
 		D9118DB923673209007F5C63 /* NIBM_ArticleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9118DB823673209007F5C63 /* NIBM_ArticleTests.swift */; };
 		D9118DC423673209007F5C63 /* NIBM_ArticleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9118DC323673209007F5C63 /* NIBM_ArticleUITests.swift */; };
-		D9F2AA0E23804D9100E85E8D /* GoogleService-Info-2.plist in Resources */ = {isa = PBXBuildFile; fileRef = D9F2AA0D23804D9100E85E8D /* GoogleService-Info-2.plist */; };
+		D9CD4AD72382D84C00BE6B0E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D9CD4AD62382D84C00BE6B0E /* GoogleService-Info.plist */; };
+		D9CD4AD92382E19400BE6B0E /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9CD4AD82382E19400BE6B0E /* Utils.swift */; };
+		D9CD4ADB2382E27600BE6B0E /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D9CD4ADA2382E27600BE6B0E /* Home.storyboard */; };
+		D9CD4ADF2382F66800BE6B0E /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9CD4ADE2382F66800BE6B0E /* HomeViewController.swift */; };
+		D9CD4AE12382FB5D00BE6B0E /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9CD4AE02382FB5D00BE6B0E /* SignUpViewController.swift */; };
 		D9F2AA1023804F1F00E85E8D /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F2AA0F23804F1F00E85E8D /* SignInViewController.swift */; };
 		DB675D3C71A63EBFAB6620BB /* Pods_NIBM_Article_NIBM_ArticleUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DD065A85445726E5D733F91 /* Pods_NIBM_Article_NIBM_ArticleUITests.framework */; };
 		F92EE52FB3251A7E3578BA09 /* Pods_NIBM_ArticleTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAFAC5BDF2B4D25BD1EC84BA /* Pods_NIBM_ArticleTests.framework */; };
@@ -60,7 +64,11 @@
 		D9118DBF23673209007F5C63 /* NIBM ArticleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "NIBM ArticleUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9118DC323673209007F5C63 /* NIBM_ArticleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NIBM_ArticleUITests.swift; sourceTree = "<group>"; };
 		D9118DC523673209007F5C63 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D9F2AA0D23804D9100E85E8D /* GoogleService-Info-2.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info-2.plist"; path = "../../../../Downloads/GoogleService-Info-2.plist"; sourceTree = "<group>"; };
+		D9CD4AD62382D84C00BE6B0E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../GoogleService-Info.plist"; sourceTree = "<group>"; };
+		D9CD4AD82382E19400BE6B0E /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		D9CD4ADA2382E27600BE6B0E /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
+		D9CD4ADE2382F66800BE6B0E /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		D9CD4AE02382FB5D00BE6B0E /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		D9F2AA0F23804F1F00E85E8D /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		DC14B27F448AD952CB6B28F8 /* Pods-NIBM ArticleTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NIBM ArticleTests.release.xcconfig"; path = "Target Support Files/Pods-NIBM ArticleTests/Pods-NIBM ArticleTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -136,9 +144,10 @@
 				D9118DA323673206007F5C63 /* AppDelegate.swift */,
 				D9118DA523673206007F5C63 /* ViewController.swift */,
 				D9118DAA23673208007F5C63 /* Assets.xcassets */,
+				D9CD4AD62382D84C00BE6B0E /* GoogleService-Info.plist */,
 				D9118DAC23673208007F5C63 /* LaunchScreen.storyboard */,
-				D9F2AA0D23804D9100E85E8D /* GoogleService-Info-2.plist */,
 				D9118DAF23673208007F5C63 /* Info.plist */,
+				D9CD4AD82382E19400BE6B0E /* Utils.swift */,
 			);
 			path = "NIBM Article";
 			sourceTree = "<group>";
@@ -175,6 +184,7 @@
 			isa = PBXGroup;
 			children = (
 				D9118DA723673206007F5C63 /* Main.storyboard */,
+				D9CD4ADA2382E27600BE6B0E /* Home.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -183,6 +193,8 @@
 			isa = PBXGroup;
 			children = (
 				D9F2AA0F23804F1F00E85E8D /* SignInViewController.swift */,
+				D9CD4ADE2382F66800BE6B0E /* HomeViewController.swift */,
+				D9CD4AE02382FB5D00BE6B0E /* SignUpViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -297,8 +309,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				D9118DAE23673208007F5C63 /* LaunchScreen.storyboard in Resources */,
+				D9CD4ADB2382E27600BE6B0E /* Home.storyboard in Resources */,
+				D9CD4AD72382D84C00BE6B0E /* GoogleService-Info.plist in Resources */,
 				D9118DAB23673208007F5C63 /* Assets.xcassets in Resources */,
-				D9F2AA0E23804D9100E85E8D /* GoogleService-Info-2.plist in Resources */,
 				D9118DA923673206007F5C63 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -427,9 +440,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D9CD4AE12382FB5D00BE6B0E /* SignUpViewController.swift in Sources */,
+				D9CD4ADF2382F66800BE6B0E /* HomeViewController.swift in Sources */,
 				D9118DA623673206007F5C63 /* ViewController.swift in Sources */,
 				D9118DA423673206007F5C63 /* AppDelegate.swift in Sources */,
 				D9F2AA1023804F1F00E85E8D /* SignInViewController.swift in Sources */,
+				D9CD4AD92382E19400BE6B0E /* Utils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
