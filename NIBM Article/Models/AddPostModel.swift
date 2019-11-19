@@ -7,3 +7,20 @@
 //
 
 import Foundation
+
+struct AddPostModel: Codable {
+    
+    var title : String!
+    var description : String!
+    var addedTime: Date!
+    
+    init(title: String, description: String, addedTime: Date) {
+        self.title = title
+        self.description = description
+        self.addedTime = addedTime
+    }
+    
+    
+    
+    
+}

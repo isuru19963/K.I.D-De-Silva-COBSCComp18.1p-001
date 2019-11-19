@@ -20,6 +20,9 @@
 		D9CD4ADB2382E27600BE6B0E /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D9CD4ADA2382E27600BE6B0E /* Home.storyboard */; };
 		D9CD4ADF2382F66800BE6B0E /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9CD4ADE2382F66800BE6B0E /* HomeViewController.swift */; };
 		D9CD4AE12382FB5D00BE6B0E /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9CD4AE02382FB5D00BE6B0E /* SignUpViewController.swift */; };
+		D9E3E07423846D4E006A1A84 /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9E3E07323846D4E006A1A84 /* PostCell.swift */; };
+		D9E3E07623847F2E006A1A84 /* AddPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9E3E07523847F2E006A1A84 /* AddPostViewController.swift */; };
+		D9E3E0792384807F006A1A84 /* AddPostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9E3E0782384807F006A1A84 /* AddPostModel.swift */; };
 		D9F2AA1023804F1F00E85E8D /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F2AA0F23804F1F00E85E8D /* SignInViewController.swift */; };
 		DB675D3C71A63EBFAB6620BB /* Pods_NIBM_Article_NIBM_ArticleUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DD065A85445726E5D733F91 /* Pods_NIBM_Article_NIBM_ArticleUITests.framework */; };
 		F92EE52FB3251A7E3578BA09 /* Pods_NIBM_ArticleTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAFAC5BDF2B4D25BD1EC84BA /* Pods_NIBM_ArticleTests.framework */; };
@@ -69,6 +72,9 @@
 		D9CD4ADA2382E27600BE6B0E /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		D9CD4ADE2382F66800BE6B0E /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		D9CD4AE02382FB5D00BE6B0E /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		D9E3E07323846D4E006A1A84 /* PostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
+		D9E3E07523847F2E006A1A84 /* AddPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPostViewController.swift; sourceTree = "<group>"; };
+		D9E3E0782384807F006A1A84 /* AddPostModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPostModel.swift; sourceTree = "<group>"; };
 		D9F2AA0F23804F1F00E85E8D /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		DC14B27F448AD952CB6B28F8 /* Pods-NIBM ArticleTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NIBM ArticleTests.release.xcconfig"; path = "Target Support Files/Pods-NIBM ArticleTests/Pods-NIBM ArticleTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -139,6 +145,8 @@
 		D9118DA223673206007F5C63 /* NIBM Article */ = {
 			isa = PBXGroup;
 			children = (
+				D9E3E07723848047006A1A84 /* Models */,
+				D9E3E07223846CD4006A1A84 /* CellView */,
 				D9F2AA0C23804C4200E85E8D /* ViewControllers */,
 				D9F2AA0B23804C1500E85E8D /* Storyboards */,
 				D9118DA323673206007F5C63 /* AppDelegate.swift */,
@@ -180,6 +188,22 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		D9E3E07223846CD4006A1A84 /* CellView */ = {
+			isa = PBXGroup;
+			children = (
+				D9E3E07323846D4E006A1A84 /* PostCell.swift */,
+			);
+			path = CellView;
+			sourceTree = "<group>";
+		};
+		D9E3E07723848047006A1A84 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				D9E3E0782384807F006A1A84 /* AddPostModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		D9F2AA0B23804C1500E85E8D /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
@@ -195,6 +219,7 @@
 				D9F2AA0F23804F1F00E85E8D /* SignInViewController.swift */,
 				D9CD4ADE2382F66800BE6B0E /* HomeViewController.swift */,
 				D9CD4AE02382FB5D00BE6B0E /* SignUpViewController.swift */,
+				D9E3E07523847F2E006A1A84 /* AddPostViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -440,9 +465,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D9E3E07423846D4E006A1A84 /* PostCell.swift in Sources */,
 				D9CD4AE12382FB5D00BE6B0E /* SignUpViewController.swift in Sources */,
 				D9CD4ADF2382F66800BE6B0E /* HomeViewController.swift in Sources */,
 				D9118DA623673206007F5C63 /* ViewController.swift in Sources */,
+				D9E3E0792384807F006A1A84 /* AddPostModel.swift in Sources */,
+				D9E3E07623847F2E006A1A84 /* AddPostViewController.swift in Sources */,
 				D9118DA423673206007F5C63 /* AppDelegate.swift in Sources */,
 				D9F2AA1023804F1F00E85E8D /* SignInViewController.swift in Sources */,
 				D9CD4AD92382E19400BE6B0E /* Utils.swift in Sources */,

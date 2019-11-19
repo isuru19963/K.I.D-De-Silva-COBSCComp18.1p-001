@@ -41,7 +41,8 @@ class SignInViewController: UIViewController {
                 strongSelf.alert(message: error?.localizedDescription ?? "Error")
                 return
             }else{
-                strongSelf.performSegue(withIdentifier: "signInToHome", sender: self)
+                strongSelf.performSegue(withIdentifier: "homeNavVC", sender: self)
+                
             }
         }
     }
