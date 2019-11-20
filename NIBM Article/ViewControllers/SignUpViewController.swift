@@ -51,7 +51,7 @@ class SignUpViewController: UIViewController {
             }
             
             //user created
-            self.performSegue(withIdentifier: "signUpToHome", sender: nil)
+            self.performSegue(withIdentifier: "signInVc", sender: nil)
             
             
         }

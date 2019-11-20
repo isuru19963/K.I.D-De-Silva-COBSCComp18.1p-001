@@ -16,7 +16,7 @@ class AddPostViewController: UIViewController {
     @IBOutlet weak var user: UITextField!
     
     var imagePicker:UIImagePickerController!
-  
+   var ref = DatabaseReference.init()
 
   
     
@@ -26,7 +26,11 @@ class AddPostViewController: UIViewController {
         imagePicker = UIImagePickerController()
         imagePicker.allowsEditing = true
         imagePicker.sourceType = .photoLibrary
-        imagePicker.delegate = self 
+        imagePicker.delegate = self
+        
+        self.ref = Database.database().reference()
+   
+        postIMAGE.isUserInteractionEnabled = true
         // Do any additional setup after loading the view.
     }
     
@@ -52,28 +56,53 @@ class AddPostViewController: UIViewController {
             alert(message: "Description Is Required")
             return
         }
-        
-        let posts = AddPostModel(title: postTitle.text ?? "", description: postDesc.text ?? "" ,user: user.text ?? "" ,image_url: "")
-        
-        var workList = UserDefaults.standard.decode(for: [AddPostModel].self, using: String(describing: AddPostModel.self))
-        
-        //cheack if old saved items available
-        if (workList == nil || (workList?.isEmpty)!) {
-            //if not available add a new array
-            UserDefaults.standard.encode(for:[posts], using: String(describing: AddPostModel.self))
-        } else {
-            //if available append to array and save
-            workList?.append(posts)
-            UserDefaults.standard.encode(for:workList, using: String(describing: AddPostModel.self))
+        if (postIMAGE.image == nil){
+            alert(message: "Image Is Required")
+            return
         }
-        
-        //go back
+        self.saveFIRData()
         navigationController?.popViewController(animated: true)
         
     }
-
+    func saveFIRData(){
+        self.uploadMedia(image: postIMAGE.image!){ url in
+            self.saveImage(profileImageURL: url!){ success in
+                if (success != nil){
+                    self.dismiss(animated: true, completion: nil)
+                }
+                
+            }
+        }
+    }
+    
+    
+    func uploadMedia(image :UIImage, completion: @escaping ((_ url: URL?) -> ())) {
+        let imageName = UUID().uuidString
+        let storageRef = Storage.storage().reference().child("posts").child(imageName)
+        let imgData = self.postIMAGE.image?.pngData()
+        let metaData = StorageMetadata()
+        metaData.contentType = "image/png"
+        storageRef.putData(imgData!, metadata: metaData) { (metadata, error) in
+            if error == nil{
+                storageRef.downloadURL(completion: { (url, error) in
+                    completion(url)
+                })
+            }else{
+                print("error in save image")
+                completion(nil)
+            }
+        }
+    }
+    
+    func saveImage(profileImageURL: URL , completion: @escaping ((_ url: URL?) -> ())){
+        let dict = ["desc": postDesc.text!, "imageUrl": profileImageURL.absoluteString,"title": postTitle.text!,"user": user.text!] as [String : Any]
+        self.ref.child("posts").childByAutoId().setValue(dict)
+    }
     
 }
+
+    
+
 extension AddPostViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {

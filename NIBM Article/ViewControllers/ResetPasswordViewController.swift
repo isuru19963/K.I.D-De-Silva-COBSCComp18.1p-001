@@ -7,13 +7,38 @@
 //
 
 import UIKit
+import Firebase
 
 class ResetPasswordViewController: UIViewController {
-
+    
+    
+    @IBOutlet weak var email: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+    }
+    @IBAction func resetPasswordClick(_ sender: Any) {
+        if email.text == "" {
+            self.alert(message: "Enter your email")
+            return
+        }
+        
+        if !isValidEmail(testStr: email.text!) {
+            self.alert(message: "Not a valid email")
+            return
+        }
+        
+        Auth.auth().sendPasswordReset(withEmail: email.text!) { error in
+            if (error != nil){
+                self.alert(message: error?.localizedDescription ?? "Error")
+                return
+            }
+            
+            self.alert(message: "A password reset email has been sent to your account")
+            
+            
+        }
     }
     
 

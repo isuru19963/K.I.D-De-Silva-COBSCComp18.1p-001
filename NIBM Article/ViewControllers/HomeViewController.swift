@@ -12,8 +12,10 @@ import LocalAuthentication
 
 class HomeViewController: UIViewController {var postsList : [AddPostModel] = []
     var ref: DatabaseReference!
+    var window: UIWindow?
     
     @IBOutlet weak var tableview: UITableView!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     
     
@@ -59,7 +61,41 @@ class HomeViewController: UIViewController {var postsList : [AddPostModel] = []
             
             self.tableview.reloadData()
             
+            
         }
+    }
+    @IBAction func addPost(_ sender: Any) {
+        
+        self.window = UIWindow(frame: UIScreen.main.bounds)
+        let currentUser = Auth.auth().currentUser
+        self.window = UIWindow(frame: UIScreen.main.bounds)
+        
+        //checks if user signed in
+        if currentUser == nil {
+            
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            
+            let initialViewController = storyboard.instantiateViewController(withIdentifier: "signInVc")
+            
+            self.window?.rootViewController = initialViewController
+            self.window?.makeKeyAndVisible()
+            
+            
+        } else {
+            
+            
+            let storyboard = UIStoryboard(name: "Home", bundle: nil)
+            
+            let initialViewController = storyboard.instantiateViewController(withIdentifier: "addPostNav")
+            
+            self.window?.rootViewController = initialViewController
+            self.window?.makeKeyAndVisible()
+            
+        }
+        
+        
+        
+     
     }
     
 }
