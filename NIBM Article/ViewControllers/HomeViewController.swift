@@ -10,29 +10,91 @@ import UIKit
 import Firebase
 import LocalAuthentication
 
-class HomeViewController: UIViewController {
-
+class HomeViewController: UIViewController {var postsList : [AddPostModel] = []
+    var ref: DatabaseReference!
+    
+    @IBOutlet weak var tableview: UITableView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        ref = Database.database().reference()
+        
+        tableview.dataSource = self
+        tableview.delegate = self
+        
+        getStudentData()
+        
         // Do any additional setup after loading the view.
     }
     
-    @IBAction func logout(_ sender: Any) {
+    func getStudentData(){
+        
+        let friendsRef = ref.child("posts")
         
         
-        let firebaseAuth = Auth.auth()
-        do {
-            try firebaseAuth.signOut()
+        friendsRef.observe(.value){ snapshot in
+            for child in snapshot.children.allObjects as! [DataSnapshot] {
+                
+                let studentDic = child.value as! NSDictionary
+                
+                let title = studentDic["title"] as! String
+                let description = studentDic["desc"] as! String
+                let user = studentDic["user"] as? String
+                let image_url = studentDic["image_url"] as? String
+                let date = studentDic["addedDate"] as? String
+                
+                let post = AddPostModel(
+                    title: title,
+                    description: description,
+                    user: user ?? "",
+                    addedTime: image_url ?? ""
+                )
+                
+                self.studentsList.append(post)
+                
+                print(child)
+            }
             
-            self.performSegue(withIdentifier: "goToSignIn", sender: nil)
-        } catch let signOutError as NSError {
-            print ("Error signing out: %@", signOutError)
+            self.tableview.reloadData()
+            
         }
-        
-        
     }
     
+}
+
+extension HomeViewController: UITableViewDataSource, UITableViewDelegate{
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
+        return postsList.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "friendCell", for: indexPath) as! StudentTableViewCell
+        
+        cell.selectionStyle = .none
+        
+        cell.setData(student: studentsList[indexPath.row])
+        
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
+        performSegue(withIdentifier: "friendDetail", sender: postsList[indexPath.row])
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "friendDetail" {
+            if let viewController = segue.destination as? StudentDetailViewController{
+                
+                viewController.student = sender as? Student
+            }
+        }
+    }
+}
+
     /*
     // MARK: - Navigation
 
