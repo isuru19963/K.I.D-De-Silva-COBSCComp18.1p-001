@@ -129,7 +129,7 @@
         <!--Home-->
         <scene sceneID="4yY-Mu-ibN">
             <objects>
-                <viewController id="ZJJ-3v-L3n" customClass="HomeViewController" customModule="NIBM_Article" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController useStoryboardIdentifierAsRestorationIdentifier="YES" id="ZJJ-3v-L3n" customClass="HomeViewController" customModule="NIBM_Article" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2HW-3f-NIO">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -221,6 +221,21 @@
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Home" leftItemsSupplementBackButton="YES" id="4S5-0V-ftq">
+                        <barButtonItem key="leftBarButtonItem" style="plain" id="yfD-BO-Rg4">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="hiH-3S-XRX">
+                                <rect key="frame" x="20" y="7" width="92" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Sign Out">
+                                    <color key="titleColor" red="0.97389414610000002" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="logOut:" destination="ZJJ-3v-L3n" eventType="touchUpInside" id="MbL-q2-ED8"/>
+                                </connections>
+                            </button>
+                            <connections>
+                                <action selector="logOut:" destination="ZJJ-3v-L3n" id="XPe-n1-Mkd"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Add New" id="s6Y-wh-KAE">
                             <color key="tintColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>

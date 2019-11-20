@@ -64,6 +64,14 @@ class HomeViewController: UIViewController {var postsList : [AddPostModel] = []
             
         }
     }
+    @IBAction func logOut(_ sender: Any) {
+        let firebaseAuth = Auth.auth()
+        do {
+            try firebaseAuth.signOut()
+        } catch let signOutError as NSError {
+            print ("Error signing out: %@", signOutError)
+        }
+    }
     @IBAction func addPost(_ sender: Any) {
         
         self.window = UIWindow(frame: UIScreen.main.bounds)
