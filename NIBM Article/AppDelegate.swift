@@ -35,9 +35,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         } else {
             
             
-            let storyboard = UIStoryboard(name: "Home", bundle: nil)
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
             
-            let initialViewController = storyboard.instantiateViewController(withIdentifier: "homeNavVC")
+            let initialViewController = storyboard.instantiateViewController(withIdentifier: "signInVc")
             
             self.window?.rootViewController = initialViewController
             self.window?.makeKeyAndVisible()

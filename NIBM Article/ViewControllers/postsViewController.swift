@@ -9,16 +9,13 @@
 import UIKit
 import Nuke
 class postsViewController: UIViewController {
-    var student: AddPostModel? = nil
+    var posts: AddPostModel? = nil
+
+    @IBOutlet weak var userName: UILabel!
+    
     @IBOutlet weak var studentImage: UIImageView!
-    @IBOutlet weak var firstNameLabel: UILabel!
-    @IBOutlet weak var lastNameLabel: UILabel!
-    @IBOutlet weak var cityLabel: UILabel!
-    @IBOutlet weak var phoneNumberLabel: UILabel!
-    @IBOutlet weak var dobLabel: UILabel!
-    @IBOutlet weak var facebookLabel: UILabel!
-    
-    
+    @IBOutlet weak var postTitle: UILabel!
+    @IBOutlet weak var postDescription: UITextView!
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -26,18 +23,14 @@ class postsViewController: UIViewController {
         
         // Do any additional setup after loading the view.
         
-        if student != nil{
+        if posts != nil{
             
-            let url = URL(string: ((student?.imageURL)!))
+            let url = URL(string: ((posts?.image_url)!))
             
             Nuke.loadImage(with: url!, into: studentImage)
             
-            firstNameLabel.text = student?.firstName
-            lastNameLabel.text = student?.lastName
-            cityLabel.text = student?.city
-            phoneNumberLabel.text = student?.phoneNumber
-            dobLabel.text = student?.birthday
-            facebookLabel.text = student?.fbUrl
+            postTitle.text = posts?.title
+            postDescription.text = posts?.description
             
         }
     }

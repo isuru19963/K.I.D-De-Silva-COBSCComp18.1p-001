@@ -12,8 +12,9 @@ class SignUpViewController: UIViewController {
 
     @IBOutlet weak var name: UITextField!
     @IBOutlet weak var email: UITextField!
-    @IBOutlet weak var confirm_password: UITextField!
     @IBOutlet weak var password: UITextField!
+    
+    @IBOutlet weak var confirm_password: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -21,7 +22,6 @@ class SignUpViewController: UIViewController {
     }
     
 
-    
     @IBAction func signUpClick(_ sender: Any) {
         if email.text == "" {
             self.alert(message: "enter a email")
@@ -55,8 +55,9 @@ class SignUpViewController: UIViewController {
             
             
         }
-        
     }
+    
+
     /*
     // MARK: - Navigation
 

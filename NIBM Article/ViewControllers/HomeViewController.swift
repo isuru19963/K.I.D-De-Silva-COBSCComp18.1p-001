@@ -16,6 +16,7 @@ class HomeViewController: UIViewController {var postsList : [AddPostModel] = []
     @IBOutlet weak var tableview: UITableView!
     
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -41,18 +42,17 @@ class HomeViewController: UIViewController {var postsList : [AddPostModel] = []
                 
                 let title = studentDic["title"] as! String
                 let description = studentDic["desc"] as! String
-                let user = studentDic["user"] as? String
-                let image_url = studentDic["image_url"] as? String
-                let date = studentDic["addedDate"] as? String
+                let user = studentDic["user"] as! String
+                let image_url = studentDic["imageUrl"] as! String
                 
                 let post = AddPostModel(
                     title: title,
                     description: description,
-                    user: user ?? "",
-                    addedTime: image_url ?? ""
+                    user: user ,
+                    image_url: image_url
                 )
                 
-                self.studentsList.append(post)
+                self.postsList.append(post)
                 
                 print(child)
             }
@@ -72,11 +72,11 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "friendCell", for: indexPath) as! StudentTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "friendCell", for: indexPath) as! PostCell
         
         cell.selectionStyle = .none
         
-        cell.setData(student: studentsList[indexPath.row])
+        cell.populateData(post: postsList[indexPath.row])
         
         return cell
     }
@@ -87,9 +87,9 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate{
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "friendDetail" {
-            if let viewController = segue.destination as? StudentDetailViewController{
+            if let viewController = segue.destination as? postsViewController{
                 
-                viewController.student = sender as? Student
+                viewController.posts = sender as? AddPostModel
             }
         }
     }
@@ -105,4 +105,4 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate{
     }
     */
 
-}
+

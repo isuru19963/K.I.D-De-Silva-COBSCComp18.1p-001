@@ -12,22 +12,28 @@ import Nuke
 
 class PostCell: UITableViewCell {
 
+    @IBOutlet weak var postTitle: UILabel!
+    @IBOutlet weak var postImage: UIImageView!
+    @IBOutlet weak var postDescription: UILabel!
+    @IBOutlet weak var userName: UILabel!
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        profileImage.layer.cornerRadius = profileImage.frame.width / 2
+        
     }
     
-    func setData(student : posts){
+ 
+    func populateData(post: AddPostModel)  {
         
-        name.text = student.firstName
-        city.text = student.city
+        postTitle.text = post.title
+        postDescription.text = post.description
+        userName.text = post.user
         
-        let url = URL(string: student.imageURL)
+        let imgUrl = URL(string: post.image_url)
         
-        Nuke.loadImage(with: url!, into: profileImage)
-        
+        Nuke.loadImage(with: imgUrl!, into: postImage)
         
     }
     

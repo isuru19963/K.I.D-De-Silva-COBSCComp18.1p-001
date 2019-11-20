@@ -13,6 +13,8 @@ class AddPostViewController: UIViewController {
     @IBOutlet weak var postTitle: UITextField!
     @IBOutlet weak var postDesc: UITextField!
     @IBOutlet weak var postIMAGE: UIImageView!
+    @IBOutlet weak var user: UITextField!
+    
     var imagePicker:UIImagePickerController!
   
 
@@ -51,7 +53,7 @@ class AddPostViewController: UIViewController {
             return
         }
         
-        let posts = AddPostModel(title: postTitle.text ?? "" , description: postDesc.text ?? "" , addedTime: Date())
+        let posts = AddPostModel(title: postTitle.text ?? "", description: postDesc.text ?? "" ,user: user.text ?? "" ,image_url: "")
         
         var workList = UserDefaults.standard.decode(for: [AddPostModel].self, using: String(describing: AddPostModel.self))
         

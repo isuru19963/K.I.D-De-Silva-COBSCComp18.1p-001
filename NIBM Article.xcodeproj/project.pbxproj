@@ -16,6 +16,8 @@
 		D9118DB923673209007F5C63 /* NIBM_ArticleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9118DB823673209007F5C63 /* NIBM_ArticleTests.swift */; };
 		D9118DC423673209007F5C63 /* NIBM_ArticleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9118DC323673209007F5C63 /* NIBM_ArticleUITests.swift */; };
 		D989F54B2385020700C95A8B /* postsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D989F54A2385020700C95A8B /* postsViewController.swift */; };
+		D989F54D2385AB2B00C95A8B /* clap-hand-medium-skin-tone-37733.png in Resources */ = {isa = PBXBuildFile; fileRef = D989F54C2385AB2B00C95A8B /* clap-hand-medium-skin-tone-37733.png */; };
+		D989F54F2385BC8300C95A8B /* ResetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D989F54E2385BC8300C95A8B /* ResetPasswordViewController.swift */; };
 		D9CD4AD72382D84C00BE6B0E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D9CD4AD62382D84C00BE6B0E /* GoogleService-Info.plist */; };
 		D9CD4AD92382E19400BE6B0E /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9CD4AD82382E19400BE6B0E /* Utils.swift */; };
 		D9CD4ADB2382E27600BE6B0E /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D9CD4ADA2382E27600BE6B0E /* Home.storyboard */; };
@@ -69,6 +71,8 @@
 		D9118DC323673209007F5C63 /* NIBM_ArticleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NIBM_ArticleUITests.swift; sourceTree = "<group>"; };
 		D9118DC523673209007F5C63 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D989F54A2385020700C95A8B /* postsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = postsViewController.swift; sourceTree = "<group>"; };
+		D989F54C2385AB2B00C95A8B /* clap-hand-medium-skin-tone-37733.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "clap-hand-medium-skin-tone-37733.png"; path = "../../../../Downloads/clap-hand-medium-skin-tone-37733.png"; sourceTree = "<group>"; };
+		D989F54E2385BC8300C95A8B /* ResetPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewController.swift; sourceTree = "<group>"; };
 		D9CD4AD62382D84C00BE6B0E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D9CD4AD82382E19400BE6B0E /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		D9CD4ADA2382E27600BE6B0E /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
@@ -154,6 +158,7 @@
 				D9118DA323673206007F5C63 /* AppDelegate.swift */,
 				D9118DA523673206007F5C63 /* ViewController.swift */,
 				D9118DAA23673208007F5C63 /* Assets.xcassets */,
+				D989F54C2385AB2B00C95A8B /* clap-hand-medium-skin-tone-37733.png */,
 				D9CD4AD62382D84C00BE6B0E /* GoogleService-Info.plist */,
 				D9118DAC23673208007F5C63 /* LaunchScreen.storyboard */,
 				D9118DAF23673208007F5C63 /* Info.plist */,
@@ -223,6 +228,7 @@
 				D9CD4AE02382FB5D00BE6B0E /* SignUpViewController.swift */,
 				D9E3E07523847F2E006A1A84 /* AddPostViewController.swift */,
 				D989F54A2385020700C95A8B /* postsViewController.swift */,
+				D989F54E2385BC8300C95A8B /* ResetPasswordViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -336,6 +342,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D989F54D2385AB2B00C95A8B /* clap-hand-medium-skin-tone-37733.png in Resources */,
 				D9118DAE23673208007F5C63 /* LaunchScreen.storyboard in Resources */,
 				D9CD4ADB2382E27600BE6B0E /* Home.storyboard in Resources */,
 				D9CD4AD72382D84C00BE6B0E /* GoogleService-Info.plist in Resources */,
@@ -471,6 +478,7 @@
 				D989F54B2385020700C95A8B /* postsViewController.swift in Sources */,
 				D9E3E07423846D4E006A1A84 /* PostCell.swift in Sources */,
 				D9CD4AE12382FB5D00BE6B0E /* SignUpViewController.swift in Sources */,
+				D989F54F2385BC8300C95A8B /* ResetPasswordViewController.swift in Sources */,
 				D9CD4ADF2382F66800BE6B0E /* HomeViewController.swift in Sources */,
 				D9118DA623673206007F5C63 /* ViewController.swift in Sources */,
 				D9E3E0792384807F006A1A84 /* AddPostModel.swift in Sources */,
