@@ -27,6 +27,7 @@
 		D9E3E07623847F2E006A1A84 /* AddPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9E3E07523847F2E006A1A84 /* AddPostViewController.swift */; };
 		D9E3E0792384807F006A1A84 /* AddPostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9E3E0782384807F006A1A84 /* AddPostModel.swift */; };
 		D9F2AA1023804F1F00E85E8D /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F2AA0F23804F1F00E85E8D /* SignInViewController.swift */; };
+		D9FBCB612386E8F100905C50 /* MyProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9FBCB602386E8F100905C50 /* MyProfileViewController.swift */; };
 		DB675D3C71A63EBFAB6620BB /* Pods_NIBM_Article_NIBM_ArticleUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DD065A85445726E5D733F91 /* Pods_NIBM_Article_NIBM_ArticleUITests.framework */; };
 		F92EE52FB3251A7E3578BA09 /* Pods_NIBM_ArticleTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAFAC5BDF2B4D25BD1EC84BA /* Pods_NIBM_ArticleTests.framework */; };
 /* End PBXBuildFile section */
@@ -82,6 +83,7 @@
 		D9E3E07523847F2E006A1A84 /* AddPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPostViewController.swift; sourceTree = "<group>"; };
 		D9E3E0782384807F006A1A84 /* AddPostModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPostModel.swift; sourceTree = "<group>"; };
 		D9F2AA0F23804F1F00E85E8D /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		D9FBCB602386E8F100905C50 /* MyProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileViewController.swift; sourceTree = "<group>"; };
 		DC14B27F448AD952CB6B28F8 /* Pods-NIBM ArticleTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NIBM ArticleTests.release.xcconfig"; path = "Target Support Files/Pods-NIBM ArticleTests/Pods-NIBM ArticleTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -229,6 +231,7 @@
 				D9E3E07523847F2E006A1A84 /* AddPostViewController.swift */,
 				D989F54A2385020700C95A8B /* postsViewController.swift */,
 				D989F54E2385BC8300C95A8B /* ResetPasswordViewController.swift */,
+				D9FBCB602386E8F100905C50 /* MyProfileViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -481,6 +484,7 @@
 				D989F54F2385BC8300C95A8B /* ResetPasswordViewController.swift in Sources */,
 				D9CD4ADF2382F66800BE6B0E /* HomeViewController.swift in Sources */,
 				D9118DA623673206007F5C63 /* ViewController.swift in Sources */,
+				D9FBCB612386E8F100905C50 /* MyProfileViewController.swift in Sources */,
 				D9E3E0792384807F006A1A84 /* AddPostModel.swift in Sources */,
 				D9E3E07623847F2E006A1A84 /* AddPostViewController.swift in Sources */,
 				D9118DA423673206007F5C63 /* AppDelegate.swift in Sources */,

@@ -8,7 +8,7 @@
 
 import UIKit
 import Firebase
-
+import SwiftyJSON
 class AddPostViewController: UIViewController {
     @IBOutlet weak var postTitle: UITextField!
     @IBOutlet weak var postDesc: UITextField!
@@ -17,6 +17,8 @@ class AddPostViewController: UIViewController {
     
     var imagePicker:UIImagePickerController!
    var ref = DatabaseReference.init()
+     var avatarImageUrl: String!
+     var firstname: String!
 
   
     
@@ -29,7 +31,6 @@ class AddPostViewController: UIViewController {
         imagePicker.delegate = self
         
         self.ref = Database.database().reference()
-   
         postIMAGE.isUserInteractionEnabled = true
         // Do any additional setup after loading the view.
     }
@@ -47,6 +48,20 @@ class AddPostViewController: UIViewController {
     
     
     @IBAction func savePost(_ sender: Any) {
+       let loggedUserEmail = UserDefaults.standard.string(forKey: "LoggedUser")
+        
+        let avatarRef = Database.database().reference().child("users").child(loggedUserEmail!)
+        avatarRef.observe(.value, with: { snapshot in
+            
+            let dict = snapshot.value as? [String: AnyObject]
+            let json = JSON(dict as Any)
+            
+            self.firstname = json["firstName"].stringValue
+            self.avatarImageUrl = json["imageUrl"].stringValue
+            
+            
+            
+        })
         if (postTitle.text == "") {
             alert(message: "title is required")
             return
@@ -95,8 +110,17 @@ class AddPostViewController: UIViewController {
     }
     
     func saveImage(profileImageURL: URL , completion: @escaping ((_ url: URL?) -> ())){
-        let dict = ["desc": postDesc.text!, "imageUrl": profileImageURL.absoluteString,"title": postTitle.text!,"user": user.text!] as [String : Any]
+          let loggedUserUID = UserDefaults.standard.string(forKey: "UserUID")
+        let dict = [
+            
+                    "username": self.firstname!,
+                    "userImageUrl": self.avatarImageUrl!,
+                    "userId": loggedUserUID!,
+                    "title": postTitle.text!,
+                    "desc": postDesc.text!,
+                    "imageUrl": profileImageURL.absoluteString] as [String : Any]
         self.ref.child("posts").childByAutoId().setValue(dict)
+        self.alert(message: "Post Added Successfully")
     }
     
 }

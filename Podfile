@@ -11,6 +11,9 @@ target 'NIBM Article' do
   pod 'Firebase/Database'
   pod 'Firebase/Storage'
   pod 'Nuke', '~> 7.0'
+  pod 'BiometricAuthentication'
+  pod 'Alamofire', '~> 5.0.0-rc.2'
+  pod 'SwiftyJSON'
 
   target 'NIBM ArticleTests' do
     inherit! :search_paths

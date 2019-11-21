@@ -41,7 +41,23 @@ class SignInViewController: UIViewController {
                 strongSelf.alert(message: error?.localizedDescription ?? "Error")
                 return
             }else{
-                strongSelf.performSegue(withIdentifier: "homeNavVC", sender: self)
+                var user_email:String?
+                var UID: String?
+                if let user = user {
+                    _ = user.user.displayName
+                    user_email = user.user.email
+                    UID = user.user.uid
+                    print("eeeeeeeeeee\(user_email!)")
+                }
+                
+                //self.showAlert(message: "SignIn Successfully! Email: \(user_email!)")
+                UserDefaults.standard.set(user_email, forKey: "LoggedUser")
+                UserDefaults.standard.set(UID, forKey: "UserUID")
+                UserDefaults.standard.set(true, forKey: "LoggedIn")
+                UserDefaults.standard.synchronize()
+                
+                let vc = UIStoryboard(name: "Home", bundle: nil).instantiateViewController(withIdentifier: "homeNavVC")
+                self?.present(vc, animated: true, completion: nil)
                 
             }
         }

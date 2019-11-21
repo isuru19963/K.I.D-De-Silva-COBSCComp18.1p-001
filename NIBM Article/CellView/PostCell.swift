@@ -14,7 +14,7 @@ class PostCell: UITableViewCell {
 
     @IBOutlet weak var postTitle: UILabel!
     @IBOutlet weak var postImage: UIImageView!
-    @IBOutlet weak var postDescription: UILabel!
+//    @IBOutlet weak var postDescription: UILabel!
     @IBOutlet weak var userName: UILabel!
     
     
@@ -28,7 +28,7 @@ class PostCell: UITableViewCell {
     func populateData(post: AddPostModel)  {
         
         postTitle.text = post.title
-        postDescription.text = post.description
+//        postDescription.text = post.description
         userName.text = post.user
         
         let imgUrl = URL(string: post.image_url)

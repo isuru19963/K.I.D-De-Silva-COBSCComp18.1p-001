@@ -72,39 +72,7 @@ class HomeViewController: UIViewController {var postsList : [AddPostModel] = []
             print ("Error signing out: %@", signOutError)
         }
     }
-    @IBAction func addPost(_ sender: Any) {
-        
-        self.window = UIWindow(frame: UIScreen.main.bounds)
-        let currentUser = Auth.auth().currentUser
-        self.window = UIWindow(frame: UIScreen.main.bounds)
-        
-        //checks if user signed in
-        if currentUser == nil {
-            
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            
-            let initialViewController = storyboard.instantiateViewController(withIdentifier: "signInVc")
-            
-            self.window?.rootViewController = initialViewController
-            self.window?.makeKeyAndVisible()
-            
-            
-        } else {
-            
-            
-            let storyboard = UIStoryboard(name: "Home", bundle: nil)
-            
-            let initialViewController = storyboard.instantiateViewController(withIdentifier: "addPostNav")
-            
-            self.window?.rootViewController = initialViewController
-            self.window?.makeKeyAndVisible()
-            
-        }
-        
-        
-        
-     
-    }
+
     
 }
 

@@ -1,4 +1,6 @@
 PODS:
+  - Alamofire (5.0.0-rc.3)
+  - BiometricAuthentication (3.0)
   - Firebase/Auth (6.13.0):
     - Firebase/CoreOnly
     - FirebaseAuth (~> 6.4.0)
@@ -89,16 +91,22 @@ PODS:
   - nanopb/decode (0.3.9011)
   - nanopb/encode (0.3.9011)
   - Nuke (7.6.3)
+  - SwiftyJSON (5.0.0)
 
 DEPENDENCIES:
+  - Alamofire (~> 5.0.0-rc.2)
+  - BiometricAuthentication
   - Firebase/Auth
   - Firebase/Core
   - Firebase/Database
   - Firebase/Storage
   - Nuke (~> 7.0)
+  - SwiftyJSON
 
 SPEC REPOS:
   trunk:
+    - Alamofire
+    - BiometricAuthentication
     - Firebase
     - FirebaseAnalytics
     - FirebaseAuth
@@ -117,8 +125,11 @@ SPEC REPOS:
     - leveldb-library
     - nanopb
     - Nuke
+    - SwiftyJSON
 
 SPEC CHECKSUMS:
+  Alamofire: ca8c0de6906873be89d6deec5c8de279e00bf872
+  BiometricAuthentication: e39b1a55040d679d5dbc4fa90d76e067c432de7f
   Firebase: 458d109512200d1aca2e1b9b6cf7d68a869a4a46
   FirebaseAnalytics: 45f36d9c429fc91d206283900ab75390cd05ee8a
   FirebaseAuth: 7d0f84873926f6648bbd1391a318dfb1a26b5e4f
@@ -137,7 +148,8 @@ SPEC CHECKSUMS:
   leveldb-library: 55d93ee664b4007aac644a782d11da33fba316f7
   nanopb: 18003b5e52dab79db540fe93fe9579f399bd1ccd
   Nuke: 44130e95e09463f8773ae4b96b90de1eba6b3350
+  SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
 
-PODFILE CHECKSUM: d6bcfaa7d32fbc83e15c5fa7505fcb52c74a09d6
+PODFILE CHECKSUM: cb54fe03dbaf9c6bfbb384b84c181114bb720477
 
 COCOAPODS: 1.8.4
