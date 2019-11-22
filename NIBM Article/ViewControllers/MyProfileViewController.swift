@@ -32,26 +32,26 @@ class MyProfileViewController: UIViewController {
         imageUser.isUserInteractionEnabled = true
         let tap = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing(_:)))
         view.addGestureRecognizer(tap)
-        
-        let loggedUserUid = UserDefaults.standard.string(forKey: "UserUID")
-        
-
-        let ref = Database.database().reference().child("users").child(loggedUserUid!)
-        ref.observe(.value, with: { snapshot in
-
+//
+//       let loggedUserEmail = UserDefaults.standard.string(forKey: "LoggedUser")
+//
+//
+//        let ref = Database.database().reference().child("users").child(loggedUserEmail!)
+//        ref.observe(.value, with: { snapshot in
+//
 //            let dict = snapshot.value as? [String: AnyObject]
 //            let json = JSON(dict as Any)
 //
-//            let imageURL = URL(string: json["profileImageUrl"].stringValue)
+//            let imageURL = URL(string: json["imageUrl"].stringValue)
 //            Nuke.loadImage(with: imageURL!, into: self.imageUser)
 //
 //            self.firstName.text = json["firstName"].stringValue
 //            self.lastName.text = json["lastName"].stringValue
 //            self.mobilNo.text = json["mobilNo"].stringValue
 //            self.batch.text = json["batch"].stringValue
-        
-            
-        })
+//        
+//
+//        })
         // Do any additional setup after loading the view.
     }
     @IBAction func signOut(_ sender: Any) {
@@ -128,6 +128,7 @@ class MyProfileViewController: UIViewController {
                     "lastName": lastName.text!,
                     "imageUrl": profileImageURL.absoluteString,
                     "mobilNo": mobilNo.text!,
+                     "batch": batch.text!,
                     "email":loggedUserEmail!] as [String : Any]
         self.ref.child("users").childByAutoId().setValue(dict)
         self.alert(message: "Updted Successfully")
