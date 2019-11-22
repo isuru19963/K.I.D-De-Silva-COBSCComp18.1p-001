@@ -14,6 +14,7 @@ struct AddPostModel: Codable {
     var description : String!
     var user: String!
     var image_url: String!
+    var userImage: String!
     
     init(title: String, description: String,user: String,image_url:String) {
         self.title = title

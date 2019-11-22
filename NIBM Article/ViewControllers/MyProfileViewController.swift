@@ -17,7 +17,8 @@ class MyProfileViewController: UIViewController {
     @IBOutlet weak var lastName: UITextField!
     @IBOutlet weak var mobilNo: UITextField!
     @IBOutlet weak var batch: UITextField!
-    
+    var window: UIWindow?
+
    var imagePicker:UIImagePickerController!
       var ref = DatabaseReference.init()
     override func viewDidLoad() {
@@ -32,6 +33,7 @@ class MyProfileViewController: UIViewController {
         imageUser.isUserInteractionEnabled = true
         let tap = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing(_:)))
         view.addGestureRecognizer(tap)
+          self.window = UIWindow(frame: UIScreen.main.bounds)
 //
 //       let loggedUserEmail = UserDefaults.standard.string(forKey: "LoggedUser")
 //
@@ -65,6 +67,13 @@ class MyProfileViewController: UIViewController {
         UserDefaults.standard.removeObject(forKey: "LoggedIn")
         UserDefaults.standard.removeObject(forKey: "UserUID")
         UserDefaults.standard.synchronize()
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        
+        let initialViewController = storyboard.instantiateViewController(withIdentifier: "signInVc")
+        
+        self.window?.rootViewController = initialViewController
+        self.window?.makeKeyAndVisible()
         
     }
     

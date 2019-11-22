@@ -13,11 +13,11 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var name: UITextField!
     @IBOutlet weak var email: UITextField!
     @IBOutlet weak var password: UITextField!
-    
+     var window: UIWindow?
     @IBOutlet weak var confirm_password: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+  self.window = UIWindow(frame: UIScreen.main.bounds)
         // Do any additional setup after loading the view.
     }
     
@@ -51,8 +51,13 @@ class SignUpViewController: UIViewController {
             }
             
             //user created
-            self.performSegue(withIdentifier: "signInVc", sender: nil)
+           
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
             
+            let initialViewController = storyboard.instantiateViewController(withIdentifier: "signInVc")
+            
+            self.window?.rootViewController = initialViewController
+            self.window?.makeKeyAndVisible()
             
         }
     }

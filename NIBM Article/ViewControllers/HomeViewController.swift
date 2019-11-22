@@ -46,11 +46,11 @@ class HomeViewController: UIViewController {var postsList : [AddPostModel] = []
                 let description = studentDic["desc"] as! String
                 let user = studentDic["user"] as! String
                 let image_url = studentDic["imageUrl"] as! String
-                
                 let post = AddPostModel(
                     title: title,
                     description: description,
                     user: user ,
+                    
                     image_url: image_url
                 )
                 
